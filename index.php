@@ -7,8 +7,10 @@
     <?php
     include('Student.php');
 
+    // array to contain students
     $students = array();
 
+    // first student
     $first = new Student();
     $first->surname = "Doe";
     $first->first_name = "John";
@@ -19,6 +21,7 @@
     $first->add_grade(55);
     $students['j123'] = $first;
 
+    // second student
     $second = new Student();
     $second->surname = "Einstein";
     $second->first_name = "Albert";
@@ -30,6 +33,7 @@
     $second->add_grade(50);
     $students['a456'] = $second;
 
+    // third student
     $third = new Student();
     $third->surname = "Test";
     $third->first_name = "Student";
@@ -39,8 +43,10 @@
     $third->add_grade(100);
     $students['a000000000'] = $third;
 
+    // ksort students array
     ksort($students);
 
+    // print each student with toString() method of Student class
     foreach($students as $student)
         echo $student->toString();
 
